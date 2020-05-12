@@ -9,6 +9,6 @@ public class CodeReviewMain {
             thing[i] = 'x';
         }
 
-        System.out.println("Did a thing");
+        System.out.println("異常終了");
     }
 }
