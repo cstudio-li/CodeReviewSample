@@ -9,4 +9,8 @@ public class SampleCode {
         Long epochTime = sdf.parse(dateString).getTime();
         System.out.println(epochTime);
     }
+
+    public long sample2(){
+        return 1.2;
+    }
 }
