@@ -13,4 +13,12 @@ public class SampleCode {
     public long sample2(){
         return 1.2;
     }
+
+    public void runtimeError(){
+        int n = 9, div = 0;
+
+        div = n/0;
+
+        System.out.println("result = " + div);
+    }
 }
