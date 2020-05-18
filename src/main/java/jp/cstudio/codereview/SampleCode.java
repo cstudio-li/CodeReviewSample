@@ -3,18 +3,24 @@ package jp.cstudio.codereview;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
+import java.text.ParseException;
 import java.text.SimpleDateFormat;
 
 public class SampleCode {
     public void sample(){
         String dateString = "2016/01/01 00:00:00";
         SimpleDateFormat sdf = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
-        Long epochTime = sdf.parse(dateString).getTime();
+        Long epochTime = null;
+        try {
+            epochTime = sdf.parse(dateString).getTime();
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
         System.out.println(epochTime);
     }
 
     public long sample2(){
-        return 1.2;
+        return (long) 1.2;
     }
 
     public void runtimeError(){
