@@ -1,5 +1,8 @@
 package jp.cstudio.codereview;
 
+import java.io.FileInputStream;
+import java.io.IOException;
+import java.io.InputStream;
 import java.text.SimpleDateFormat;
 
 public class SampleCode {
@@ -20,5 +23,18 @@ public class SampleCode {
         div = n/0;
 
         System.out.println("result = " + div);
+    }
+
+    public void runtimeExcption(String someFile){
+        try {
+            InputStream is = new FileInputStream(someFile);  // could throw IOException
+            if (true) {
+                throw new Exception();  // WRONG
+            }
+        } catch (IOException ex) {
+            System.err.println("cannot open ...");
+        } catch (Exception ex) {
+            System.err.println("something bad happened");  // WRONG
+        }
     }
 }
